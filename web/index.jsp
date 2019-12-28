@@ -43,6 +43,7 @@
         </div>
         <button class="layui-btn layui-btn-normal layui-btn-radius" id="btn_check">
             <i class="layui-icon layui-icon-search"> 查询</i></button>
+        <a href="login.html" class="layui-btn layui-btn-radius" style="background-color: #007DDB;border-color: #007DDB">退出登录</a>
         <table id="demo" lay-filter="etoak"></table>
         <script type="text/html" id="toolbar">
             {{#  if(d.mstatus == 0){  }}
