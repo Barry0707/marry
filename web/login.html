@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/mystyle2.css">
+    <title>用户登录</title>
+</head>
+<body background="images/marry.jpg">
+<form action="log" method="post" lay-filter="etoak"
+      class="layui-form">
+    <input type="text" name="name" autocomplete="off"
+           class="layui-input" lay-verify="required|etoak" autofocus
+           style="border-radius:20px;border-color: deeppink"
+           placeholder="请输入登录姓名">
+    <input type="password" name="pass" autocomplete="off"
+           class="layui-input" lay-verify="required|etoakpass"
+           style="margin-top:10px;border-radius:20px;border-color: deeppink"
+           placeholder="请输入登录密码">
+    <button class="layui-btn layui-btn-radius" lay-submit lay-filter="myFormSub"
+            style="margin-top: 51px;width: 100%;background-color: deeppink">立即登录</button>
+    <a href="reg.html" class="layui-btn layui-btn-radius"
+            style="margin-top: 10px;width: 100%;background-color: deeppink;margin-left: 0">注册</a>
+    <p style="color:white;margin-top:50px">© 2019 婚庆</p>
+</form>
+<script src="layui/layui.js"></script>
+<script src="script/jquery-1.10.2.js"></script>
+<script>
+    function main() {
+        layui.use(['form','layer'],function () {
+            let form = layui.form;
+            let layer = layui.layer;
+            form.verify({
+                etoak:function(value,item){
+                    let standerd = /^\w+$/ ;
+                    if(!standerd.test($.trim(value))){
+                        return "<span style='color:red'>用户名必须是字母数字下划线</span>";
+                    }
+                },
+                etoakpass:function(value,item){
+                    if(value.length<4||value.length>10){
+                        return "<span style='color:red'>密码应该在4到10位之间</span>";
+                    }
+                }
+            });
+        });
+    }
+    main();
+</script>
+</body>
+</html>
