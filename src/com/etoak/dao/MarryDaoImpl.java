@@ -36,7 +36,6 @@ public class MarryDaoImpl implements MarryDao{
             }
             sql = sql.substring(0,sql.length()-3);
             sql+="order by mid asc limit ?,?";
-            //System.out.println(sql);
             return qr.query(Factory.getCon(),sql,new BeanListHandler<Marry>(Marry.class),index,max);
 
         }catch(Exception e){
