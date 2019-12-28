@@ -11,7 +11,6 @@ create table marryuser
 );
 
 INSERT INTO marryuser VALUES (null,'admin','admin','13833338888','1330033003@qq.com','1'),
-(null,'hakimi','00000','13234556788','1330033003@qq.com','0');
 
 /*姓名、婚礼区域、婚礼类型、预算金额、婚礼风格、联系电话、预计婚期、创建日期、审核状态*/
 CREATE TABLE marry(
