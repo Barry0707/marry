@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 杨炯昊
-  Date: 2019/8/30
-  Time: 15:10
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% request.setCharacterEncoding("utf-8"); %>
 <html>
@@ -19,11 +12,11 @@
     <div class="layui-form-item">
         <label class="layui-form-label">婚礼区域（单选）:</label>
         <div class="layui-input-block">
-            <input type="radio" name="marea" value="天桥区" title="天桥区" checked>
-            <input type="radio" name="marea" value="历下区" title="历下区">
-            <input type="radio" name="marea" value="历城区" title="历城区">
-            <input type="radio" name="marea" value="市中区" title="市中区">
-            <input type="radio" name="marea" value="槐荫区" title="槐荫区">
+            <input type="radio" name="marea" value="李沧区" title="李沧区" checked>
+            <input type="radio" name="marea" value="市南区" title="市南区">
+            <input type="radio" name="marea" value="城阳区" title="城阳区">
+            <input type="radio" name="marea" value="市北区" title="市北区">
+            <input type="radio" name="marea" value="黄岛区" title="黄岛区">
         </div>
     </div>
     <div class="layui-form-item">
@@ -71,6 +64,7 @@
         <div class="layui-input-block" style="margin-left: 0">
             <input type="button" class="layui-btn layui-btn-radius" style="background-color: deeppink;border-color: deeppink" id="math"  value="计算金额">
             <input type="text" lay-verify="required" class="layui-btn layui-btn-radius layui-btn-primary" id="result" name="result" style="border-color: deeppink">
+            <a href="pay.html" class="layui-btn layui-btn-radius" style="background-color: deeppink;border-color: deeppink">支付</a>
         </div>
     </div>
     <div class="layui-form-item">
@@ -136,11 +130,7 @@
                 let text = $("input#result");
                 text.attr("value",all);
             });
-                /*form.on('select(filter)', function(data){
-                 console.log(data.elem); //得到select原始DOM对象
-                 console.log(data.value); //得到被选中的值
-                 console.log(data.othis); //得到美化后的DOM对象
-                 });*/
+
             form.on('select(money)', function(data){
                 if(data.value == 20000){
                     $("#count option[value='0.98']").removeAttr("disabled");
@@ -159,26 +149,6 @@
                     form.render('select');
                 }
             });
-
-            //事件监听
-            //监听多选框
-            /*form.on('checkbox(filter)', function(data){
-             console.log(data.elem); //得到checkbox原始DOM对象
-             console.log(data.elem.checked); //是否被选中，true或者false
-             console.log(data.value); //复选框value值，也可以通过data.elem.value得到
-             console.log(data.othis); //得到美化后的DOM对象
-             });*/
-
-            //事件监听
-            //监听switch特殊复选框
-
-            //事件监听
-            //监听radio单选框
-            /*form.on('radio(filter)', function(data){
-             console.log(data.elem); //得到radio原始DOM对象
-             console.log(data.value); //被点击的radio的value值
-             });*/
-
 
             laydate.render({
                 elem: '#mtime',
