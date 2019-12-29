@@ -58,7 +58,6 @@ public class MarryDaoImpl implements MarryDao{
                 sql+=" mwishtime < '"+time2+"' and";
             }
             sql = sql.substring(0,sql.length()-3);
-            System.out.println(sql);
             return Integer.parseInt(qr.query(Factory.getCon(),sql,new ScalarHandler()).toString());
         }catch(Exception e){
             e.printStackTrace();
