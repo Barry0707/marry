@@ -90,8 +90,8 @@
                 even: true,
                 url: 'show?mname=' + $("input#name").val() + '&time1=' + $("input#time1").val() + '&time2=' + $("input#time2").val(),
                 method: 'post',
-                limit: 6,
-                page: true,
+                limit: 6,  //一页6个
+                page: true, //是否分页
 
                 cols: [[
                     {field: 'mname', title: '姓名', width: 100, fixed: 'left'},
@@ -120,8 +120,8 @@
                         url: "checkItem",
                         type: "post",
                         data: "mid=" + data.mid,
-                        dataType: "text",
-                        async: true,
+                        dataType: "text",  //对应后端string
+                        async: true,      //是否开启异步
                         success: function (data) {
                             if (data == "suc") {
                                 show();

@@ -129,7 +129,7 @@
                 console.log(all);
                 let text = $("input#result");
                 text.attr("value",all);
-            });
+            });    //计算金额
 
             form.on('select(money)', function(data){
                 if(data.value == 20000){
